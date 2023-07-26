@@ -9,10 +9,9 @@
  */
 int main(int argc, char **agv, char ** enviro_var)
 {
-        if (argc != 0 && argc <= 1)
-        {
-        cmd_prompt(agv, enviro_var);
+if (argc == 1)
 
-        }
+cmd_prompt(agv, enviro_var);
+
 return(0);
 }

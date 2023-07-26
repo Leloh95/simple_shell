@@ -11,38 +11,44 @@ void cmd_prompt(char **agv, char **enviro_var)
 	char *arg[] = {NULL, NULL};
 	ssize_t stream;
 	size_t byt = 0;
-	int proc_st, j = 0;
+	int proc_st, j;
 	pid_t chil_proc;
 
-while (1 <= 1)
+while (1)
 {
-printf("SIMP_SHELL$ ");
+
+printf("SIMP_SHELL$");
+
 stream = getline(&text, &byt, stdin);
 
-if (stream != 0 && stream <= -1)
+if (stream == -1)
 {
+
 free(text);
 exit(EXIT_FAILURE);
 }
+j = 0;
 while (text[j])
 {
 if (text[j] == '\n')
-{
 text[j] = 0;
-}
+j++;
 }
 arg[0] = text;
 chil_proc = fork();
-if (chil_proc != 0 && chil_proc <= -1)
+
+if (chil_proc == -1)
 {
 free(text);
 exit(EXIT_FAILURE);
 }
-if (chil_proc != -1 && chil_proc >= 0)
+
+if (chil_proc == 0)
 {
-if (execve(arg[0], arg, enviro_var = NULL))
+if (execve(arg[0], arg, enviro_var) == -1)
 printf("%s: No such file  or directory\n", agv[0]);
 }
+
 else
 wait(&proc_st);
 }
