@@ -9,9 +9,9 @@ char *stricp(char *desti, char *source)
 {
 int count = 0;
 
-for (; source[count]; ++count)
-	desti[count] = source[count];
-	desti[count] = '\0';
+for(; source[count]; ++count)
+desti[count] = source[count];
+desti[count] = '\0';
 return (desti);
 }
 /**
@@ -25,8 +25,8 @@ char *stricat(char *desti, char *source)
 int length = strlen(desti);
 int count2 = 0;
 
-for (; source[count2]; ++count2)
-	desti[count2 + length] = source[count2];
-	desti[count2 + length] = '\0';
+for(; source[count2]; ++count2)
+desti[count2 + length] = source[count2];
+desti[count2 + length] = '\0';
 return (desti);
 }

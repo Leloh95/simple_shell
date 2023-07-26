@@ -16,7 +16,7 @@ void cmd_prompt(char **agv, char **enviro_var)
 
 while (1)
 {
-printf("SIMP_SHELL$");
+printf("SIMPLE_SHELL");
 stream = getline(&text, &byt, stdin);
 if (stream == -1)
 {
