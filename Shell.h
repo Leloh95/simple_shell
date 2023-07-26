@@ -12,10 +12,9 @@ void getoken(void);
 void init_prog(void);
 void free_memory(char **p);
 char *stritok(char *txt, char *delimit);
-
 char *stricp(char *desti, char *source);
 char *stricat(char *desti, char *source);
-int shell_built();
+int shell_built(void);
 
 
 extern command_lne;
