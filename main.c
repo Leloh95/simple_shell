@@ -7,11 +7,11 @@
  * @enviro_var: environment vector
  * Return: 0
  */
-int main(int argc, char **agv, char ** enviro_var)
+int main(int argc, char **agv, char **enviro_var)
 {
 if (argc == 1)
 
 cmd_prompt(agv, enviro_var);
 
-return(0);
+return (0);
 }

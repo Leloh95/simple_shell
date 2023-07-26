@@ -16,14 +16,10 @@ void cmd_prompt(char **agv, char **enviro_var)
 
 while (1)
 {
-
 printf("SIMP_SHELL$");
-
 stream = getline(&text, &byt, stdin);
-
 if (stream == -1)
 {
-
 free(text);
 exit(EXIT_FAILURE);
 }
@@ -36,19 +32,16 @@ j++;
 }
 arg[0] = text;
 chil_proc = fork();
-
 if (chil_proc == -1)
 {
 free(text);
 exit(EXIT_FAILURE);
 }
-
 if (chil_proc == 0)
 {
 if (execve(arg[0], arg, enviro_var) == -1)
 printf("%s: No such file  or directory\n", agv[0]);
 }
-
 else
 wait(&proc_st);
 }
